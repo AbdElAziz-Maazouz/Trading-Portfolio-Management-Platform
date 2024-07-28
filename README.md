@@ -9,23 +9,23 @@ This application is designed for managing trader accounts across multiple tradin
 
 - **Trading Data Visualization:** View trading data for selected currency pairs, customizable with various indicators.
   
-  <img src="Img/2.jpg" alt="Trading Data Visualization" width="700" height="500">
+  <img src="Img/2.jpg" alt="Trading Data Visualization" width="550" height="400">
   
 - **Currency Pair Comparison:** Compare data from multiple currency pairs on the same graph.
   
-  <img src="Img/3.jpg" alt="Currency Pair Comparison" width="700" height="500">
+  <img src="Img/3.jpg" alt="Currency Pair Comparison" width="550" height="400">
   
 - **Portfolio Overview:** Our application includes an 'All' option, which allows users to visualize data for selected currency pairs across all trading platforms.
   
-  <img src="Img/4.jpg" alt="Portfolio Overview:" width="700" height="500">
+  <img src="Img/4.jpg" alt="Portfolio Overview:" width="550" height="400">
   
 - **Portfolio Management:** Use a high-level risk management algorithm to manage and grow your portfolio.
   
-  <img src="Img/6.jpg" alt="Portfolio Management:" width="700" height="500">
+  <img src="Img/6.jpg" alt="Portfolio Management:" width="550" height="400">
   
 - **Strategy Testing:** Test your portfolio management strategy in a simulated environment before real-world deployment.
   
-  <img src="Img/5.jpg" alt="Strategy Testing:" width="700" height="500">
+  <img src="Img/5.jpg" alt="Strategy Testing:" width="550" height="400">
   
 
 ## Technologies
