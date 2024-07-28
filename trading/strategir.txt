@@ -1,0 +1,95 @@
+
+
+def getIncreasingOrDecreasing(currencies,indicatorOfSell,limitOfUsdt):
+    global increaseOrDecrease
+    global prev_balances
+    global first_balances
+    global balances
+    if increaseOrDecrease==None:
+       increaseOrDecrease = {currency: 0 for currency in currencies}
+    for currency in currencies:
+        if currency=="USDT":
+            diffrence=balances[currency]["quantity"]-prev_balances[currency]["quantity"]
+            increaseOrDecrease[currency]+=(diffrence*100)/prev_balances[currency]["quantity"]
+            if increaseOrDecrease[currency]<limitOfUsdt:
+                balances[currency]["buy"]="n"
+                balances[currency]["sell"]="y"       
+        else:  
+            diffrence=balances[currency]["price"]-prev_balances[currency]["price"]
+            increaseOrDecrease[currency]+=(diffrence*100)/prev_balances[currency]["price"]
+            if increaseOrDecrease[currency]>=0:
+                balances[currency]["buy"]="y"
+                balances[currency]["sell"]="y"
+            if increaseOrDecrease[currency]<0:
+                balances[currency]["buy"]="y"
+                balances[currency]["sell"]="n"
+            if increaseOrDecrease[currency]>indicatorOfSell:
+                balances[currency]["buy"]="n"
+                balances[currency]["sell"]="Y"
+            if prev_balances[currency]["sell"]=="n" and ((diffrence*100)/prev_balances[currency]["price"])>0:
+                balances[currency]["buy"]="n"
+                balances[currency]["sell"]="Y"
+    return increaseOrDecrease
+
+    
+def trade():
+    if first_balances==None:
+        first_balances=balances
+    if first_total==None:
+       first_total=getTotal(balances)
+    total_balance = getTotal(balances) 
+    print(f'Updated total balance is: {total_balance}')
+    print(balances)
+    if prev_balances :
+        increaseOrDecrease=getIncreasingOrDecreasing(currencies,indicatorOfSell,limitOfUsdt)
+        sorted_currencies = sort(currencies,balances,prev_balances)
+        if total >= prev_total:
+            for currency in sorted_currencies:
+                if currency=="USDT":
+                    continue
+                prev_percent=getPercent(currency,prev_balances,prev_total)
+                percent=getPercent(currency,balances,prev_total)
+                variationIndicatorOfSell=increaseOrDecrease[currency]
+                p=percent-prev_percent
+                if p<0:
+                    buy_amount=p*prev_total/100
+                    b=buy(exchange,currency, -buy_amount,markets)
+                    print(f"buy: {currency} {b}$ ")
+                    transaction_benifit-=b
+                elif p>0:
+                    sell_amount = p*prev_total/100
+                    s=sell(exchange,currency, sell_amount,markets)  
+                    print(f"sell: {currency} {s}$  increase={variationIndicatorOfSell}%")
+                    transaction_benifit+=s 
+
+        else :
+            for currency in sorted_currencies:
+                if currency=="USDT":
+                    continue
+                prev_percent=getPercent(currency,prev_balances,total)
+                percent=getPercent(currency,balances,total)
+                variationIndicatorOfSell=increaseOrDecrease[currency]
+                p=percent-prev_percent
+                if p<0:
+                    buy_amount=p*total/100
+                    b=buy(exchange,currency, -buy_amount,markets)
+                    print(f"buy: {currency} {b}$ ")
+                    transaction_benifit-=b
+                elif p>0:
+                    sell_amount = p*total/100
+                    s=sell(exchange,currency, sell_amount,markets)  
+                    transaction_benifit+=s   
+    if prev_balances==None:
+        prev_balances = {currency: {"price":0,"quantity":0,"buy":"y","sell":"y"} for currency in currencies}
+    for currency in currencies:
+        if currency!="USDT":
+          percentage=getPercent(currency, balances,getTotal(balances))
+        if currency in balances:
+          prev_balances[currency]["price"] = balances[currency]["price"]
+          prev_balances[currency]["quantity"] = balances[currency]["quantity"]
+          prev_balances[currency]["buy"] = balances[currency]["buy"]
+          prev_balances[currency]["sell"] = balances[currency]["sell"]
+
+while True:
+  trade()
+  sleep(timeframe)
