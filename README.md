@@ -8,15 +8,25 @@ This application is designed for managing trader accounts across multiple tradin
 ## Features
 
 - **Trading Data Visualization:** View trading data for selected currency pairs, customizable with various indicators.
-  ![](Img/2.jpg)
+  
+  <img src="Img/2.jpg" alt="Trading Data Visualization" width="700" height="500">
+  
 - **Currency Pair Comparison:** Compare data from multiple currency pairs on the same graph.
-  ![](Img/3.jpg)
-- **Portfolio Overview:** Visualize data for all selected currency pairs over a specified period.
-  ![](Img/4.jpg)
+  
+  <img src="Img/3.jpg" alt="Currency Pair Comparison" width="700" height="500">
+  
+- **Portfolio Overview:** Our application includes an 'All' option, which allows users to visualize data for selected currency pairs across all trading platforms.
+  
+  <img src="Img/4.jpg" alt="Portfolio Overview:" width="700" height="500">
+  
 - **Portfolio Management:** Use a high-level risk management algorithm to manage and grow your portfolio.
-  ![](Img/5.jpg)
+  
+  <img src="Img/6.jpg" alt="Portfolio Management:" width="700" height="500">
+  
 - **Strategy Testing:** Test your portfolio management strategy in a simulated environment before real-world deployment.
-  ![](Img/6.jpg)
+  
+  <img src="Img/5.jpg" alt="Strategy Testing:" width="700" height="500">
+  
 
 ## Technologies
 
