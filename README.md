@@ -38,9 +38,9 @@ This application is designed for managing trader accounts across multiple tradin
 
 ## Links
 
-- [Faculté des Sciences Dhar El Mahraz – FSDM:](https://www.fsdm.usmba.ac.ma/)
+- Sidi Mohammed Ben Abdellah University-Fez [FSDM:](https://www.fsdm.usmba.ac.ma/)
 - LinkedIn [Maazouz AbdelAziz:](https://www.linkedin.com/in/abdelaziz-maazouz/)
-
+- LinkedIn [Ladraoui Anass:](https://www.linkedin.com/in/anas-ladraoui-105b75223/)
+  
 ---
 
-Feel free to adjust any details as necessary!
